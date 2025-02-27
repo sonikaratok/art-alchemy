@@ -1,0 +1,54 @@
+<%- include('partials/navbar.ejs') %>
+    <div>
+        <ul class="image-gallery">
+            <li>
+                <img src="images/image-1.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <li>
+                <img src="images/image-2.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <li>
+                <img src="images/image-3.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <li>
+                <img src="images/image-4.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <li>
+                <img src="images/image-5.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <li>
+                <img src="images/image-6.jpg" alt="">
+                <div class="overlay"><span>Image title</span></div>
+            </li>
+            <% products.forEach((product)=> { %>
+                <% if(product.imaghere===null) { %>
+                    <li>
+                        <%=product.name%> <img src=<%=product.imgpath%> >
+                    </li>
+                    <% } else { %>
+                        <li> <img src="data:image/png;base64,<%=product.imagehere%>" alt="">
+                            <div class="overlay"><span>
+                                    <%= product.name %>
+                                </span></div>
+                        </li>
+                        <% } %>
+                            <% }) %>
+
+
+        </ul>
+
+    </div>
+
+    <a class="addyourart" href="/imageUpload">Add Your Art</a>
+
+
+
+
+    </body>
+
+    </html>
